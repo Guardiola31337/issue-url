@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Issue id URL generator",
+  "short_name": "Issue id URL",
+  "description": "Generates the issue id URL based on the clicked issue and copy it to the clipboard.",
+  "version": "0.0.1",
+  "minimum_chrome_version": "38",
+  "permissions": [
+    "contextMenus",
+    "tabs", "<all_urls>"],
+  "icons": { "16": "assets/icon-16.png",
+             "48": "assets/icon-48.png",
+            "128": "assets/icon-128.png" },
+  "background": {"scripts": ["background.js"]},
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["jquery-3.2.0.min.js","content.js"],
+    "run_at": "document_end"
+  }]
+}
